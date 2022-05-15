@@ -75,7 +75,7 @@ class SettingsViewModel @Inject constructor(
         alarmManager = context.getSystemService(ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, AlarmReceiver::class.java)
 
-        pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0)
+        pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
 
         alarmManager.cancel(pendingIntent)
 
@@ -93,7 +93,7 @@ class SettingsViewModel @Inject constructor(
             alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
             val intent = Intent(context, AlarmReceiver::class.java)
 
-            pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0)
+            pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
 
             if (calendar!!.timeInMillis < System.currentTimeMillis()) {
                 calendar!!.add(Calendar.HOUR_OF_DAY, 24)
