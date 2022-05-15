@@ -9,13 +9,11 @@ import com.example.healthmonitorapp.database.Day
 import com.example.healthmonitorapp.databinding.FragmentDataListBinding
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
-import java.util.*
 
 @AndroidEntryPoint
 class DataListFragment : Fragment(R.layout.fragment_data_list) {
 
     private val viewModel by viewModels<DataViewModel>()
-    private val TAG = "DataListFragment"
     val formatter = SimpleDateFormat("dd MM yyyy")
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

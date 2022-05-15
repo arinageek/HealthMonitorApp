@@ -11,8 +11,6 @@ class DataViewModel @Inject constructor(
     private val repository: HealthRepository
 ) : ViewModel() {
 
-    val TAG = "DataViewModel"
-
     val days: LiveData<List<Day>>
         get() = repository.getAllDays().asLiveData()
 

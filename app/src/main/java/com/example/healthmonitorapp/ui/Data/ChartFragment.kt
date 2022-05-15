@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.map
 import com.example.healthmonitorapp.R
 import com.example.healthmonitorapp.database.Day
 import com.example.healthmonitorapp.databinding.FragmentChartBinding
@@ -14,13 +12,11 @@ import com.github.aachartmodel.aainfographics.aaoptionsmodel.AAMarker
 import com.github.aachartmodel.aainfographics.aatools.AAGradientColor
 import com.github.aachartmodel.aainfographics.aatools.AALinearGradientDirection
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
 class ChartFragment : Fragment(R.layout.fragment_chart) {
 
     private val viewModel by viewModels<DataViewModel>()
-    private val TAG = "ChartFragment"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
