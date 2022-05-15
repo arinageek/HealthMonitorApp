@@ -24,6 +24,7 @@ class DataListAdapter(private val dataSet: List<Day>) :
                 textViewHumidity.text = "Humidity: " + day.humidity.toString() + "%"
                 textViewTempMin.text = "Minimum temperature: " + day.temp_min.toString() + "°C"
                 textViewTempMax.text = "Maximum temperature: " + day.temp_max.toString() + "°C"
+                textViewMoonPhase.text = "Moon phase: " + day.moon_phase
             }
         }
     }
